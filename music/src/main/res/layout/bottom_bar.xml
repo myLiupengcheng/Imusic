@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#000"
+    android:clipChildren="false"
+    android:gravity="center_vertical"
+    android:id="@+id/ll_buttom_layout"
+    android:layout_height="60dip">
+
+    <ImageView
+        android:id="@+id/iv_home"
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="40dip"
+        android:src="@drawable/main_menu_tab_one_seletor"/>
+
+    <ImageView
+        android:id="@+id/iv_find"
+        android:layout_width="0dip"
+        android:clickable="true"
+        android:layout_weight="1"
+        android:layout_height="40dip"
+        android:src="@drawable/main_menu_tab_two_seletor"/>
+
+    <View
+        android:layout_weight="1"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/iv_v"
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:layout_height="40dip"
+        android:src="@drawable/main_menu_tab_three_seletor"/>
+
+    <ImageView
+        android:id="@+id/iv_like"
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:layout_height="40dip"
+        android:src="@drawable/main_menu_tab_four_seletor"/>
+
+</LinearLayout>

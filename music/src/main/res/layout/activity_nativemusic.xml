@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_native_music_root"
+    android:orientation="vertical"
+    android:background="#ddd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout"/>
+
+    <com.suansuan.textapplication.music.ui.view.ViewPagerIndicate
+        android:id="@+id/vp_indicate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:layout_marginTop="0.03dp"
+        android:paddingBottom="10dip"
+        android:background="#fff">
+    </com.suansuan.textapplication.music.ui.view.ViewPagerIndicate>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/native_music_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
+
+<!--
+    <include layout="@layout/bottom_bar"/>
+-->
+
+</LinearLayout>

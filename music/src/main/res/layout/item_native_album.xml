@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dip"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/album_icon"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/album_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="赵磊"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:layout_marginStart="15dip"
+        android:layout_marginTop="10dip"
+        android:layout_toEndOf="@id/album_icon"
+        />
+
+    <TextView
+        android:id="@+id/album_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="赵晓磊"
+        android:textSize="12sp"
+        android:textColor="#888"
+        android:layout_marginTop="3dip"
+        android:layout_marginStart="15dip"
+        android:layout_toEndOf="@id/album_icon"
+        android:layout_below="@id/album_title"
+        />
+
+    <ImageView
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:src="@mipmap/navigation_mv_more_2"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:id="@+id/imageView" />
+
+</RelativeLayout>
