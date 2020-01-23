@@ -1,0 +1,20 @@
+# 编译器相关
+*.iml
+.DS_Store
+.idea/
+/.idea/caches/build_file_checksums.ser
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/captures
+.externalNativeBuild
+
+# gradle
+.gradle
+
+# local
+/local.properties
+
+# build
+/build
+
