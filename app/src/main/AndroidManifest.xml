@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.suansuan.textapplication.music">
+    package="com.suansuan.music">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
 
     <application
+        android:name=".MusicApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SplashActivity">
+
+
+        <!-- SplashActivity  -->
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/AppSplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.HomeActivity"/>
-        <activity android:name=".ui.NativeMusicActivity"/>
+
+        <!-- HomeActivity  -->
+        <activity android:name=".activity.HomeActivity"/>
+
+        <!-- NativeMusicActivity -->
+        <activity android:name=".music.ui.NativeMusicActivity"/>
 
     </application>
 

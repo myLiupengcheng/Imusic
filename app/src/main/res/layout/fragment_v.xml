@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <com.suansuan.textapplication.music.ui.view.ViewPagerIndicate
+    <com.suansuan.music.music.ui.view.ViewPagerIndicate
         android:id="@+id/vp_indicate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,7 +12,7 @@
         android:layout_marginTop="0.03dp"
         android:paddingBottom="10dip"
         android:background="#fff">
-    </com.suansuan.textapplication.music.ui.view.ViewPagerIndicate>
+    </com.suansuan.music.music.ui.view.ViewPagerIndicate>
 
 
     <android.support.v4.view.ViewPager

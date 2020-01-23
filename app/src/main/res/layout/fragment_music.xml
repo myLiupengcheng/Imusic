@@ -10,7 +10,7 @@
         android:layout_height="match_parent" >
     </ListView>
 
-    <com.suansuan.textapplication.music.ui.view.IndexQueryView
+    <com.suansuan.music.music.ui.view.IndexQueryView
         android:id="@+id/quickIndexBar"
         android:layout_alignParentEnd="true"
         android:layout_width="30dp"

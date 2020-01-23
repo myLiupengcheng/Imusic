@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <com.suansuan.textapplication.music.ui.view.IndexQueryView
+    <com.suansuan.music.music.ui.view.IndexQueryView
         android:id="@+id/quickIndexBar"
         android:layout_width="30dp"
         android:layout_height="match_parent"
