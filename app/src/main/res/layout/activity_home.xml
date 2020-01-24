@@ -10,6 +10,7 @@
     <include layout="@layout/item_toolbar"/>
 
     <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="1"/>
@@ -20,6 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
+        app:itemIconTint="@color/bottom_navigation_view_color"
+        app:itemTextColor="@color/bottom_navigation_view_color"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation" />
 

@@ -2,7 +2,7 @@ package com.suansuan.music.focator;
 
 import com.suansuan.music.Base.BaseFragment;
 import com.suansuan.music.music.ui.fragment.FindFragment;
-import com.suansuan.music.music.ui.fragment.HomeFragment;
+import com.suansuan.music.fragment.HomeFragment;
 import com.suansuan.music.music.ui.fragment.NativeMusicFragment.AlbumFragment;
 import com.suansuan.music.music.ui.fragment.NativeMusicFragment.FolderFragment;
 import com.suansuan.music.music.ui.fragment.NativeMusicFragment.MusicFragment;

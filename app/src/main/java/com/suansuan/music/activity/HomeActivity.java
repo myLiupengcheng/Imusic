@@ -6,7 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.suansuan.music.MusicApplication;
 import com.suansuan.music.R;
@@ -15,7 +17,10 @@ import com.suansuan.music.helper.ActivityHelper;
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHelper mActivityHelper;
-//    private TextView mTextMessage;
+    private Toolbar mActionBarToolbar;
+    private ActionBar mSupportActionBar;
+
+    private View mContainer;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -23,13 +28,13 @@ public class HomeActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-//                    mTextMessage.setText(R.string.title_home);
+                    mSupportActionBar.setTitle(R.string.title_home);
                     return true;
                 case R.id.navigation_dashboard:
-//                    mTextMessage.setText(R.string.title_dashboard);
+                    mSupportActionBar.setTitle(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
-//                    mTextMessage.setText(R.string.title_notifications);
+                    mSupportActionBar.setTitle(R.string.title_notifications);
                     return true;
             }
             return false;
@@ -47,17 +52,20 @@ public class HomeActivity extends AppCompatActivity {
     private void initHomeActivityView() {
         setContentView(R.layout.activity_home);
         setToolbar();
-//        mTextMessage = findViewById(R.id.message);
+        mContainer = findViewById(R.id.fragment_container);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
     }
 
-
     private void setToolbar() {
-        ActionBar supportActionBar = getSupportActionBar();
-        if (supportActionBar != null) {
-            supportActionBar.setDisplayHomeAsUpEnabled(false);
-
+        mActionBarToolbar = findViewById(R.id.tool_bar);
+        setSupportActionBar(mActionBarToolbar);
+        mSupportActionBar = getSupportActionBar();
+        if (mSupportActionBar != null) {
+            mSupportActionBar.setDisplayHomeAsUpEnabled(false);
+            mSupportActionBar.setTitle(R.string.title_home);
         }
     }
 

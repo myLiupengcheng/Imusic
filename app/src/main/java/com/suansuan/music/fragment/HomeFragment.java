@@ -1,4 +1,4 @@
-package com.suansuan.music.music.ui.fragment;
+package com.suansuan.music.fragment;
 
 import android.content.Intent;
 import android.view.View;
