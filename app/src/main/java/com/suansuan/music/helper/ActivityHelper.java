@@ -34,9 +34,19 @@ public class ActivityHelper {
         StatusBarUtils.transparencyBar(activity);
     }
 
+    /**
+     * 设置状态栏字体的颜色
+     *
+     * @param activity 要修改状态栏的 Activity
+     * @param isDark 是否是黑色主题 (如果是黑色主题便显示白色，如果是白色主题显示黑色)
+     */
+    public void setStatusBarTextColor (Activity activity, boolean isDark) {
+        StatusBarUtils.setStatusBarTextColor(activity, isDark);
+    }
+
 
     /**
-     * 外部启动相应的Activity
+     * 外部启动相应的 Activity
      * @param intent 跳转的intent
      */
     public void startActivity (Intent intent) {
@@ -45,7 +55,7 @@ public class ActivityHelper {
     }
 
     /**
-     * 内部启动相应的Activity
+     * 内部启动相应的 Activity
      * @param intent 跳转的intent
      */
     public void startActivity (Activity activity, Intent intent) {
