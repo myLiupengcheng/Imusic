@@ -9,10 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.suansuan.music.MusicApplication;
 import com.suansuan.music.R;
-import com.suansuan.music.helper.StatusBarHelper;
+import com.suansuan.music.helper.ActivityHelper;
 
 import java.lang.ref.WeakReference;
 
+/**
+ * 闪屏页面的Activity，当前没有任何逻辑, 后期会加入，广告SDK，目前先保持现状
+ *
+ * @version 1.0
+ * @author pengchengliu
+ */
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "SplashActivity";
@@ -21,10 +27,13 @@ public class SplashActivity extends AppCompatActivity {
     private static final int ENTRY_NAVIGATION = 1;
     private static final int TIME = 4000;
 
+    private ActivityHelper mActivityHelper;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarHelper.transparencyBar(this);
+        mActivityHelper = MusicApplication.getInstance().getActivityStartHelper();
+        mActivityHelper.setStatusBarTransparency(this);
         setContentView(R.layout.activity_splash);
         new SplashActivityHandler(this).sendEmptyMessageDelayed(ENTRY_HOME, TIME);
     }
@@ -34,7 +43,7 @@ public class SplashActivity extends AppCompatActivity {
      */
     public void entry(Class Activity){
         Intent intent = new Intent(this, Activity);
-        MusicApplication.getInstance().getActivityStartHelper().startActivity(this, intent);
+        mActivityHelper.startActivity(this, intent);
         finish();
     }
 

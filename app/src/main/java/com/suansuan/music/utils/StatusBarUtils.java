@@ -1,4 +1,4 @@
-package com.suansuan.music.helper;
+package com.suansuan.music.utils;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -10,7 +10,7 @@ import android.view.WindowManager;
 /**
  * 状态栏工具
  */
-public class StatusBarHelper {
+public class StatusBarUtils {
 
     /**
      * 透明的 StatusBar 方案，SDK_INT > 21

@@ -2,18 +2,18 @@ package com.suansuan.music;
 
 import android.app.Application;
 
-import com.suansuan.music.helper.ActivityStartHelper;
+import com.suansuan.music.helper.ActivityHelper;
 
 public class MusicApplication extends Application {
 
     private static MusicApplication sInstance;
-    private ActivityStartHelper mActivityStartHelper;
+    private ActivityHelper mActivityHelper;
 
 
     @Override
     public void onCreate() {
         sInstance = this;
-        mActivityStartHelper = ActivityStartHelper.getActivityStartHelperInstance(this.getApplicationContext());
+        mActivityHelper = ActivityHelper.getActivityStartHelperInstance(this.getApplicationContext());
         super.onCreate();
     }
 
@@ -21,10 +21,10 @@ public class MusicApplication extends Application {
         return sInstance;
     }
 
-    public ActivityStartHelper getActivityStartHelper () {
-        if (mActivityStartHelper == null) {
-            mActivityStartHelper = ActivityStartHelper.getActivityStartHelperInstance(this.getApplicationContext());
+    public ActivityHelper getActivityStartHelper () {
+        if (mActivityHelper == null) {
+            mActivityHelper = ActivityHelper.getActivityStartHelperInstance(this.getApplicationContext());
         }
-        return mActivityStartHelper;
+        return mActivityHelper;
     }
 }

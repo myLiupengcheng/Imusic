@@ -4,25 +4,36 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-public class ActivityStartHelper {
+import com.suansuan.music.utils.StatusBarUtils;
 
-    private static volatile ActivityStartHelper sInstance;
+public class ActivityHelper {
+
+    private static volatile ActivityHelper sInstance;
     private Context mContext;
 
-    private ActivityStartHelper (Context context) {
+    private ActivityHelper(Context context) {
         mContext = context.getApplicationContext();
     }
 
-    public static ActivityStartHelper getActivityStartHelperInstance (Context context) {
+    public static ActivityHelper getActivityStartHelperInstance (Context context) {
         if (sInstance == null) {
-            synchronized (ActivityStartHelper.class) {
+            synchronized (ActivityHelper.class) {
                 if (sInstance == null) {
-                    sInstance = new ActivityStartHelper(context);
+                    sInstance = new ActivityHelper(context);
                 }
             }
         }
         return sInstance;
     }
+
+    /**
+     * 设置当前的 Activity 的状态栏是透明状态
+     * @param activity ：要被设置的Activity
+     */
+    public void setStatusBarTransparency (Activity activity) {
+        StatusBarUtils.transparencyBar(activity);
+    }
+
 
     /**
      * 外部启动相应的Activity
