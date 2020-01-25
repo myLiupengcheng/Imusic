@@ -11,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.suansuan.music.R;
+import com.suansuanliu.music.uicore.dialog.SwitchListDialog;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UnConnectivityFragment extends BaseFragment implements View.OnClickListener {
 
@@ -58,6 +62,15 @@ public class UnConnectivityFragment extends BaseFragment implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        this.startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+        SwitchListDialog switchListDialog = new SwitchListDialog();
+        Bundle bundle = new Bundle();
+        ArrayList<SwitchListDialog.DisplayBean> displayBeans = new ArrayList<>();
+        SwitchListDialog.DisplayBean data = new SwitchListDialog.DisplayBean("移动数据", false);
+        SwitchListDialog.DisplayBean wifi = new SwitchListDialog.DisplayBean("WIFI", false);
+        displayBeans.add(data);
+        displayBeans.add(wifi);
+        bundle.putParcelableArrayList(SwitchListDialog.KEY_DATA_LIST, displayBeans);
+        switchListDialog.setArguments(bundle);
+        switchListDialog.show(getFragmentManager(), "sss");
     }
 }

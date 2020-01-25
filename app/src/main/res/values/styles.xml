@@ -24,5 +24,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+<!--    &lt;!&ndash; 设置Toolbar标题字体的大小 &ndash;&gt;-->
+<!--    <style name="BottomNavigationView.TextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--    </style>-->
+
+
 
 </resources>

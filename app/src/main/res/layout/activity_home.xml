@@ -23,6 +23,7 @@
         android:layout_marginEnd="0dp"
         app:itemIconTint="@color/bottom_navigation_view_color"
         app:itemTextColor="@color/bottom_navigation_view_color"
+        app:itemIconSize="20dip"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation" />
 
