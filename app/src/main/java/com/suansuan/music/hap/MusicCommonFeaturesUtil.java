@@ -1,7 +1,10 @@
-package com.suansuan.music.utils;
+package com.suansuan.music.hap;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -9,10 +12,12 @@ import android.text.TextUtils;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 
+import com.suansuan.music.hap.loging.MusicLog;
 /**
  * 公共功能，一些三方判断都放在这里面
  *
  */
+@SuppressWarnings("all")
 public class MusicCommonFeaturesUtil {
 
     private static final String TAG = "MusicCommonFeaturesUtil";
@@ -57,7 +62,8 @@ public class MusicCommonFeaturesUtil {
     }
 
     /**
-     * 对于手机唯一标识符。 对于广告用例，请使用AdvertisingIdClient $ Info＃getId；对于分析，请使用InstanceId＃getId。 问题ID：HardwareIds
+     * 对于手机唯一标识符。 对于广告用例，
+     * 请使用AdvertisingIdClient $ Info＃getId；对于分析，请使用InstanceId＃getId。 问题ID：HardwareIds
      *
      * @param context Android 上下文
      * @return 返回手机的IEMI
@@ -106,6 +112,50 @@ public class MusicCommonFeaturesUtil {
         return sMacAddress;
     }
 
+    /**
+     * 判断当前的手机是否处于Debug模式下
+     *
+     * @param context Android
+     * @return
+     */
+    public static boolean isApkInDebug (Context context) {
+        try {
+            if (context == null) {
+                return false;
+            } else {
+                ApplicationInfo applicationInfo = context.getApplicationInfo();
+                return (applicationInfo.flags | ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+            }
+        } catch (Throwable ex) {
+            // TODO: 加Log
+            return false;
+        }
+    }
 
+
+    /**
+     * 判断当前手机是否联网
+     * @param context
+     * @return
+     */
+    public static boolean isConnection (Context context) {
+        NetworkInfo networkInfo = getNetworInfo(context);
+        return networkInfo != null && networkInfo.isConnected();
+    }
+
+    public static NetworkInfo getNetworInfo (Context context) {
+        try {
+            if (context == null) {
+                MusicLog.w(TAG, "getNetworInfo, context is null");
+                return null;
+            } else {
+                ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                return manager.getActiveNetworkInfo();
+            }
+        } catch (Throwable ex) {
+            MusicLog.w(TAG, "getNetworInfo, ConnectivityManager.getActiveNetworkInfo excption");
+            return null;
+        }
+    }
 
 }

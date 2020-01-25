@@ -7,4 +7,8 @@
     <string name="title_home">首页</string>
     <string name="title_dashboard">发现</string>
     <string name="title_notifications">通知</string>
+
+
+    <string name="un_connection_tip">网络不可用，请检查网络设置</string>
+    <string name="un_connection_button">网络设置</string>
 </resources>

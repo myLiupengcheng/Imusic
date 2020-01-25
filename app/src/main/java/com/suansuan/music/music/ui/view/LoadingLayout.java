@@ -80,23 +80,23 @@ public abstract class LoadingLayout extends FrameLayout {
     /** 加载数据为空的布局文件 */
     private void initLoadEmptyView() {
         if(mLoadEmptyView == null){
-            mLoadEmptyView = mLayoutInflater.inflate(R.layout.pager_empty, this, false);
+            mLoadEmptyView = mLayoutInflater.inflate(R.layout.item_pager_empty, this, false);
         }
     }
 
     /** 初始化加载失败的布局 */
     private void initLoadErrorView() {
         if(mLoadErrorView == null){
-            mLoadErrorView = mLayoutInflater.inflate(R.layout.pager_loading_error, this, false);
+            mLoadErrorView = mLayoutInflater.inflate(R.layout.item_pager_un_connectivity, this, false);
         }
-        mLoadErrorView.findViewById(R.id.btn_load).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCurrentState = MODEL_NOMAL_STATE;
-                showRightPager();
-                loadData();
-            }
-        });
+//        mLoadErrorView.findViewById(R.id.btn_load).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mCurrentState = MODEL_NOMAL_STATE;
+//                showRightPager();
+//                loadData();
+//            }
+//        });
 
     }
 
