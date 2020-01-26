@@ -7,14 +7,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.suansuan.music.R;
+import com.suansuan.music.activity.presenter.ActivityPresenter;
 
 public class MusicActivity extends AppCompatActivity {
 
     private ActionBar mSupportActionBar;
+    private ActivityPresenter mPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (mPresenter != null) {
+            mPresenter.onCreate();
+        }
         Toolbar actionBarToolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(actionBarToolbar);
         mSupportActionBar = getSupportActionBar();
@@ -30,5 +35,13 @@ public class MusicActivity extends AppCompatActivity {
         if (mSupportActionBar != null) {
             mSupportActionBar.setTitle(titleRes);
         }
+    }
+
+    protected void setActivityPresenter (ActivityPresenter presenter) {
+        mPresenter = presenter;
+    }
+
+    protected ActivityPresenter getActivityPresenter(){
+        return mPresenter;
     }
 }

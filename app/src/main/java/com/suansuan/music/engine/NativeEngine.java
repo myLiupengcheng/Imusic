@@ -7,10 +7,10 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Log;
 
-import com.suansuan.music.domain.Album;
-import com.suansuan.music.domain.Artists;
-import com.suansuan.music.domain.Music;
-import com.suansuan.music.domain.MusicFilePath;
+import com.suansuan.music.bean.Album;
+import com.suansuan.music.bean.Artists;
+import com.suansuan.music.bean.Music;
+import com.suansuan.music.bean.MusicFilePath;
 
 import java.util.ArrayList;
 import java.util.List;

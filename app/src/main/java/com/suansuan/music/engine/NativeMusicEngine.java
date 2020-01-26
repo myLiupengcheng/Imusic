@@ -8,8 +8,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
 
-import com.suansuan.music.domain.Album;
-import com.suansuan.music.domain.Music;
+import com.suansuan.music.bean.Album;
+import com.suansuan.music.bean.Music;
 
 import java.util.ArrayList;
 import java.util.Collections;

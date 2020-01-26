@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.suansuan.music.R;
-import com.suansuan.music.domain.Album;
+import com.suansuan.music.bean.Album;
 
 import java.util.Collections;
 import java.util.List;

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.suansuan.music.R;
-import com.suansuan.music.domain.Artists;
+import com.suansuan.music.bean.Artists;
 
 import java.util.Collections;
 import java.util.List;

@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.suansuan.music.R;
-import com.suansuan.music.domain.Music;
+import com.suansuan.music.bean.Music;
 
 import java.util.Collections;
 import java.util.List;

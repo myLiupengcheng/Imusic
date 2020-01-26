@@ -1,4 +1,4 @@
-package com.suansuan.music.domain;
+package com.suansuan.music.bean;
 
 import android.database.Cursor;
 

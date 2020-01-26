@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.suansuan.music.R;
-import com.suansuan.music.domain.MusicFilePath;
+import com.suansuan.music.bean.MusicFilePath;
 
 import java.util.List;
 
