@@ -32,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivityHelper = MusicApplication.getInstance().getActivityStartHelper();
+        mActivityHelper = MusicApplication.getInstance().getActivityHelper();
         mActivityHelper.setStatusBarTransparency(this);
         setContentView(R.layout.activity_splash);
         new SplashActivityHandler(this).sendEmptyMessageDelayed(ENTRY_HOME, TIME);

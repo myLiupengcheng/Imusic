@@ -21,7 +21,7 @@ public class MusicApplication extends Application {
         return sInstance;
     }
 
-    public ActivityHelper getActivityStartHelper () {
+    public ActivityHelper getActivityHelper() {
         if (mActivityHelper == null) {
             mActivityHelper = ActivityHelper.getActivityStartHelperInstance(this.getApplicationContext());
         }

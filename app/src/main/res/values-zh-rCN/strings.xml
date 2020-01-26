@@ -3,6 +3,7 @@
     <string name="app_name">音乐</string>
     <string name="app_singer">歌手</string>
     <string name="app_song_list">歌单</string>
+    <string name="app_song_list_square">歌单广场</string>
 
     <string name="title_home">首页</string>
     <string name="title_dashboard">发现</string>

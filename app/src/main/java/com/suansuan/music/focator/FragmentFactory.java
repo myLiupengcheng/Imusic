@@ -29,8 +29,8 @@ public class FragmentFactory {
         }else{
             switch (position){
                 case 0:
-                    HomeFragment homeFragment = new HomeFragment();
-                    map.put(position,homeFragment);
+//                    HomeFragment homeFragment = new HomeFragment();
+//                    map.put(position,homeFragment);
                     break;
                 case 1:
                     FindFragment findFragment = new FindFragment();

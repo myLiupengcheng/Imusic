@@ -23,13 +23,18 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <!-- HomeActivity -->
         <activity android:name=".activity.HomeActivity" />
+
+        <!-- SongListActivity -->
+        <activity
+            android:name=".song.list.SongListActivity"
+            android:parentActivityName=".activity.HomeActivity"
+            android:label="@string/app_song_list_square"/>
 
         <!-- NativeMusicActivity -->
         <activity android:name=".music.ui.NativeMusicActivity" />

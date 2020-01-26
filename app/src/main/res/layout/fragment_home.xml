@@ -3,47 +3,14 @@
     xmlns:suansuan="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#DDD"
     android:layout_height="match_parent">
 
-    <com.suansuan.music.music.ui.view.CombinationControl
-        android:id="@+id/native_music"
+    <Button
+        android:id="@+id/songList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        suansuan:startIcon ="@mipmap/music_mine"
-        suansuan:endIcon="@mipmap/list_icn_arr_right"
-        suansuan:titles="本地音乐"
-        suansuan:notes="（20首）">
-    </com.suansuan.music.music.ui.view.CombinationControl>
-
-    <com.suansuan.music.music.ui.view.CombinationControl
-        android:id="@+id/recent_play"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        suansuan:startIcon ="@mipmap/music_played"
-        suansuan:endIcon="@mipmap/list_icn_arr_right"
-        suansuan:titles="最近播放"
-        suansuan:notes="爱你一万年">
-    </com.suansuan.music.music.ui.view.CombinationControl>
-
-    <com.suansuan.music.music.ui.view.CombinationControl
-        android:id="@+id/download"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        suansuan:startIcon ="@mipmap/music_"
-        suansuan:endIcon="@mipmap/list_icn_arr_right"
-        suansuan:titles="下载管理"
-        suansuan:notes="没有任务">
-    </com.suansuan.music.music.ui.view.CombinationControl>
-
-    <com.suansuan.music.music.ui.view.CombinationControl
-        android:id="@+id/singer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        suansuan:startIcon ="@mipmap/music_atuo"
-        suansuan:endIcon="@mipmap/list_icn_arr_right"
-        suansuan:titles="我的歌手"
-        suansuan:notes="（7位）">
-    </com.suansuan.music.music.ui.view.CombinationControl>
+        android:text="@string/app_song_list"
+        android:background="@drawable/bottom_selector"
+        android:layout_margin="20dp"/>
 
 </LinearLayout>

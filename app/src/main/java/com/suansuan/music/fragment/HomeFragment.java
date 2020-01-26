@@ -1,73 +1,63 @@
 package com.suansuan.music.fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-import com.suansuan.music.Base.BaseFragment;
+import com.suansuan.music.MusicApplication;
 import com.suansuan.music.R;
-import com.suansuan.music.activity.HomeActivity;
-import com.suansuan.music.music.ui.NativeMusicActivity;
-import com.suansuan.music.music.ui.view.CombinationControl;
+import com.suansuan.music.helper.ActivityHelper;
+import com.suansuan.music.song.list.SongListActivity;
 
 /**
  *
  * Created by suansuan on 2016/10/2.
  */
 
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
-    private View mViewRoot;
-    private CombinationControl mNativeMusicView , mRecentPlay;
-
+    private ActivityHelper mActivityHelper;
 
     @Override
-    protected void findData() {
-
-    }
-
-    @Override
-    protected View initView() {
-        mViewRoot = View.inflate(mActivity, R.layout.fragment_home, null);
-        mNativeMusicView = (CombinationControl) mViewRoot.findViewById(R.id.native_music);
-        mRecentPlay = (CombinationControl) mViewRoot.findViewById(R.id.recent_play);
-        return mViewRoot;
+    public void onAttach(Context context) {
+        mActivityHelper = MusicApplication.getInstance().getActivityHelper();
+        super.onAttach(context);
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        initTiTle();
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
-    /** 初始化标题栏 */
-    private void initTiTle() {
-        HomeActivity homeActivity = (HomeActivity) mActivity;
-//        homeActivity.setTitleVisibility(true);
-    }
-
-
+    @Nullable
     @Override
-    protected void initListener() {
-        mNativeMusicView.setOnClickListener(this);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        rootView.findViewById(R.id.songList).setOnClickListener(this);
+        return rootView;
     }
 
     @Override
-    protected void initViewForData() {
-
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.native_music:
-                startNativeMusic();
-                break;
+        if (v.getId() == R.id.songList && getActivity() != null) {
+            Intent intent = new Intent(getActivity(), SongListActivity.class);
+            mActivityHelper.startActivity(getActivity(), intent);
         }
-    }
-
-
-    /** 开启本地音乐的Activity */
-    private void startNativeMusic() {
-        startActivity(new Intent(mActivity, NativeMusicActivity.class));
     }
 }
