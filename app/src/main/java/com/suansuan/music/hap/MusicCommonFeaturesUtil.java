@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Looper;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -35,6 +36,15 @@ public class MusicCommonFeaturesUtil {
     private static String sMacAddress;
     private static String sAndroidIEMI;
     private static String sAndroidID;
+
+    /**
+     * 判断当前的线程是否是子线程
+     *
+     * @return true 代表在主线程，false代表不是在主线程
+     */
+    public static boolean isOnMainThread() {
+        return Looper.myLooper() == Looper.getMainLooper();
+    }
 
     /**
      * 获取手机的 IEMI  Android Q 版本以后，获取不到，建议使用三方ID 进行拉活判断
@@ -131,7 +141,6 @@ public class MusicCommonFeaturesUtil {
             return false;
         }
     }
-
 
     /**
      * 判断当前手机是否联网

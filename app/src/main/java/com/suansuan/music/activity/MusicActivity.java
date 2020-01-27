@@ -6,8 +6,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.suansuan.music.MusicApplication;
 import com.suansuan.music.R;
 import com.suansuan.music.activity.presenter.ActivityPresenter;
+import com.suansuan.music.helper.ActivityHelper;
 
 public class MusicActivity extends AppCompatActivity {
 
@@ -17,6 +19,8 @@ public class MusicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityHelper activityHelper = MusicApplication.getInstance().getActivityHelper();
+        activityHelper.setStatusBarTextColor(this, true);
         if (mPresenter != null) {
             mPresenter.onCreate();
         }

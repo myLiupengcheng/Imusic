@@ -21,8 +21,6 @@ public class HomeActivity extends MusicActivity {
     private static final String FRAGMENT_UN_CONNECT_TAG = "UnConnectivityFragment";
     private static final String FRAGMENT_HOME_TAG = "HomeFragment";
 
-    private ActivityHelper mActivityHelper;
-
     private FragmentManager supportFragmentManager;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -48,8 +46,6 @@ public class HomeActivity extends MusicActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setContentView(R.layout.activity_home);
         super.onCreate(savedInstanceState);
-        mActivityHelper = MusicApplication.getInstance().getActivityHelper();
-        mActivityHelper.setStatusBarTextColor(this, true);
         initHomeActivityView();
     }
 
