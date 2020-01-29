@@ -7,15 +7,13 @@
         android:id="@+id/native_music_lv"
         android:layout_marginTop="1px"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </ListView>
+        android:layout_height="match_parent"/>
 
     <com.suansuan.music.music.ui.view.IndexQueryView
         android:id="@+id/quickIndexBar"
         android:layout_alignParentEnd="true"
         android:layout_width="30dp"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent"/>
 
 
     <TextView android:layout_width="110dp"

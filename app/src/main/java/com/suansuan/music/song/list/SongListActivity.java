@@ -11,11 +11,13 @@ import android.view.View;
 
 import com.suansuan.music.R;
 import com.suansuan.music.activity.MusicActivity;
+import com.suansuan.music.focator.FragmentFactory;
 import com.suansuan.music.song.list.bean.SongListCategoryGroup;
+import com.suansuan.music.song.list.presenter.SongListActivityPresenter;
 
 import java.util.List;
 
-import static com.suansuan.music.song.list.SongListActivityPresenter.*;
+import static com.suansuan.music.song.list.presenter.SongListActivityPresenter.*;
 
 
 public class SongListActivity extends MusicActivity implements SongListActivityPresenterLoadDataCallback{
@@ -25,7 +27,7 @@ public class SongListActivity extends MusicActivity implements SongListActivityP
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
 
-    private SongListActivityFragmentAdapter songListActivityFragmentAdapter;
+    List<SongListCategoryGroup.SongListCategory> songListCategories;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,8 +38,7 @@ public class SongListActivity extends MusicActivity implements SongListActivityP
         setMusicDisplayHomeAsUpEnabled(true);
         mTabLayout = findViewById(R.id.tab_layout);
         mViewPager = findViewById(R.id.song_list_view_pager);
-        songListActivityFragmentAdapter = new SongListActivityFragmentAdapter(getSupportFragmentManager());
-        mViewPager.setAdapter(songListActivityFragmentAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     @Override
@@ -45,32 +46,30 @@ public class SongListActivity extends MusicActivity implements SongListActivityP
         if (songListCategories == null || songListCategories.size() == 0) {
             return;
         }
+        this.songListCategories = songListCategories;
         mTabLayout.setVisibility(View.VISIBLE);
-        for (int i = 0; i < songListCategories.size(); i++) {
-            SongListCategoryGroup.SongListCategory songListCategory = songListCategories.get(i);
-            TabLayout.Tab tab = mTabLayout.newTab();
-            tab.setTag(songListCategory);
-            tab.setText(songListCategory.categoryName);
-            mTabLayout.addTab(tab);
-        }
-        songListActivityFragmentAdapter.notifyDataSetChanged();
+        SongListActivityAdapter songListActivityFragmentAdapter = new SongListActivityAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(songListActivityFragmentAdapter);
     }
 
-    public class SongListActivityFragmentAdapter extends FragmentPagerAdapter {
+    public class SongListActivityAdapter extends FragmentPagerAdapter {
 
-        public SongListActivityFragmentAdapter(FragmentManager fm) {
+        public CharSequence getPageTitle(int position) {
+            return songListCategories.get(position).categoryName;
+        }
+
+        private SongListActivityAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public int getCount() {
-            return mTabLayout.getTabCount();
+            return songListCategories.size();
         }
 
         @Override
         public Fragment getItem(int position) {
-
-            return null;
+            return FragmentFactory.newInstance(songListCategories.get(position).categoryId);
         }
     }
 }

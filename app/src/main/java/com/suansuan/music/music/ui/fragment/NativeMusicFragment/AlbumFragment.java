@@ -95,7 +95,7 @@ public class AlbumFragment extends AbsNativeMusicFragment {
                 Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
                 viewHolder.album_icon.setImageBitmap(bitmap);
             }else{
-                viewHolder.album_icon.setImageResource(R.mipmap.native_album_default);
+                viewHolder.album_icon.setImageResource(R.mipmap.default_image);
             }
             return convertView;
 

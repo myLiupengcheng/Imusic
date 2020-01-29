@@ -1,7 +1,8 @@
-package com.suansuan.music.song.list;
+package com.suansuan.music.song.list.presenter;
 
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 
 import com.suansuan.music.MusicConstant;
 import com.suansuan.music.activity.presenter.ActivityPresenter;
@@ -28,14 +29,13 @@ public class SongListActivityPresenter implements ActivityPresenter, MusicNetwor
     private List<SongListCategoryGroup> songListCategoryGroupList;
     private List<SongListCategoryGroup.SongListCategory> songListCategories;
 
-    protected SongListActivityPresenter (SongListActivityPresenterLoadDataCallback callback) {
+    public SongListActivityPresenter(SongListActivityPresenterLoadDataCallback callback) {
         mCallback = callback;
         mHandler = new SongListActivityPresenterHandler(new WeakReference<>(this));
     }
 
     @Override
     public void onCreate() {
-        // load 数据
         NetWorkManager.getInstance().requestGet(MusicConstant.URI_MUSIC_SONG_LIST_CATEGORIES, this);
     }
 
@@ -46,7 +46,7 @@ public class SongListActivityPresenter implements ActivityPresenter, MusicNetwor
 
     @Override
     public void onSuccess(Call call, String response) {
-        if (response != null) {
+        if (!TextUtils.isDigitsOnly(response)) {
             SongListCategoryParser songListCategoryParser = new SongListCategoryParser();
             songListCategoryParser.parserJsonToBean(response);
             songListCategoryGroupList = songListCategoryParser.getParserData();
@@ -60,13 +60,10 @@ public class SongListActivityPresenter implements ActivityPresenter, MusicNetwor
     }
 
     public static class SongListActivityPresenterHandler extends Handler {
-
         private WeakReference<SongListActivityPresenter> mPresenterReference;
-
         public SongListActivityPresenterHandler (WeakReference<SongListActivityPresenter> presenterReference) {
             mPresenterReference = presenterReference;
         }
-
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == MESSAGE_COMPLETE) {

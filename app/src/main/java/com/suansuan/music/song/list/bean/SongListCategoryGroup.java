@@ -4,14 +4,15 @@ import java.util.List;
 
 public class SongListCategoryGroup {
 
+    public int usable;
     public String categoryGroupName;
     public List<SongListCategory> items;
-    public int usable;
 
     public static class SongListCategory {
+
+        public int usable;
         public String categoryId;
         public String categoryName;
-        public int usable;
 
         @Override
         public String toString() {

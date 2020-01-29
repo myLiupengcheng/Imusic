@@ -1,8 +1,11 @@
 package com.suansuanliu.core;
 
-import android.util.Log;
+import android.net.Uri;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -48,20 +51,35 @@ public class NetWorkManager {
     }
 
     public void requestGet (String uri, final MusicNetworkCallback musicNetworkCallback) {
-        Request request = new Request.Builder().url(uri).get().build();
+        requestGet(uri, null, musicNetworkCallback);
+    }
+
+    public void requestGet (String uriString, Map<String, String> bundle, final MusicNetworkCallback musicNetworkCallback) {
+        Uri uri = bundle != null ? createUri(uriString, bundle) : Uri.parse(uriString);
+        Request request = new Request.Builder().url(uri.toString()).get().build();
         Call call = sClient.newCall(request);
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException exception) {
-                Log.d(TAG, "onFailure: " + exception.toString());
                 musicNetworkCallback.onFailure(call, exception);
             }
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String responseString = response.body().string();
-//                Log.d(TAG, "onResponse: " + responseString);
                 musicNetworkCallback.onSuccess(call, responseString);
             }
         });
     }
+
+    private Uri createUri(String uri, Map<String, String> bundle) {
+        Uri.Builder builder = Uri.parse(uri).buildUpon();
+        Set<Map.Entry<String, String>> entries = bundle.entrySet();
+        Iterator<Map.Entry<String, String>> iterator = entries.iterator();
+        for (Iterator<Map.Entry<String, String>> it = iterator; it.hasNext(); ) {
+            Map.Entry<String, String> item = it.next();
+            builder.appendQueryParameter(item.getKey(), item.getValue());
+        }
+        return builder.build();
+    }
+
 }

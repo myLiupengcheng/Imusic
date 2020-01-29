@@ -14,15 +14,15 @@ import com.suansuan.music.helper.ActivityHelper;
 public class MusicActivity extends AppCompatActivity {
 
     private ActionBar mSupportActionBar;
-    private ActivityPresenter mPresenter;
+    private ActivityPresenter mActivityPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityHelper activityHelper = MusicApplication.getInstance().getActivityHelper();
         activityHelper.setStatusBarTextColor(this, true);
-        if (mPresenter != null) {
-            mPresenter.onCreate();
+        if (mActivityPresenter != null) {
+            mActivityPresenter.onCreate();
         }
         Toolbar actionBarToolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(actionBarToolbar);
@@ -41,11 +41,11 @@ public class MusicActivity extends AppCompatActivity {
         }
     }
 
-    protected void setActivityPresenter (ActivityPresenter presenter) {
-        mPresenter = presenter;
+    protected void setActivityPresenter (ActivityPresenter activityPresenter) {
+        mActivityPresenter = activityPresenter;
     }
 
     protected ActivityPresenter getActivityPresenter(){
-        return mPresenter;
+        return mActivityPresenter;
     }
 }
