@@ -11,22 +11,28 @@ import com.suansuan.music.R;
 import com.suansuan.music.activity.presenter.ActivityPresenter;
 import com.suansuan.music.helper.ActivityHelper;
 
-public class MusicActivity extends AppCompatActivity {
+public abstract class MusicActivity extends AppCompatActivity {
 
     private ActionBar mSupportActionBar;
     private ActivityPresenter mActivityPresenter;
+    private ActivityHelper mActivityHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityHelper activityHelper = MusicApplication.getInstance().getActivityHelper();
-        activityHelper.setStatusBarTextColor(this, true);
+        mActivityHelper = MusicApplication.getInstance().getActivityHelper();
+        mActivityHelper.setStatusBarTextColor(this, true);
         if (mActivityPresenter != null) {
             mActivityPresenter.onCreate();
         }
         Toolbar actionBarToolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(actionBarToolbar);
         mSupportActionBar = getSupportActionBar();
+        if (mSupportActionBar != null) {
+            CharSequence title = getTitle();
+            mSupportActionBar.setTitle(title);
+        }
+
     }
 
     protected void setMusicDisplayHomeAsUpEnabled (boolean displayHomeAsUpEnabled) {
@@ -47,5 +53,9 @@ public class MusicActivity extends AppCompatActivity {
 
     protected ActivityPresenter getActivityPresenter(){
         return mActivityPresenter;
+    }
+
+    protected ActivityHelper getActivityHelper () {
+        return mActivityHelper;
     }
 }

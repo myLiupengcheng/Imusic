@@ -55,7 +55,8 @@ public class ActivityHelper {
     }
 
     /**
-     * 内部启动相应的 Activity
+     * 内部启动相应的 Activity,
+     * 可以在里面加入一些判断条件，比如这里判读启动的 Activity 是否存在
      * @param intent 跳转的intent
      */
     public void startActivity (Activity activity, Intent intent) {

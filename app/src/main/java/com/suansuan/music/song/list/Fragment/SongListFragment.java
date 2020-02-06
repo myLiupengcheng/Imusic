@@ -39,7 +39,7 @@ public class SongListFragment extends DelayLoadingFragment
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_song_list, container, false);
+        View rootView = inflater.inflate(R.layout.layout_recycler_progress, container, false);
         mRecyclerView = rootView.findViewById(R.id.song_list_recycler_view);
         mProgressBar = rootView.findViewById(R.id.song_list_progress_bar);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));

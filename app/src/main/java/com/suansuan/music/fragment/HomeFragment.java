@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.suansuan.music.MusicApplication;
 import com.suansuan.music.R;
 import com.suansuan.music.helper.ActivityHelper;
-import com.suansuan.music.song.list.SongListActivity;
+import com.suansuan.music.song.list.SongListMainActivity;
 
 /**
  *
@@ -56,7 +56,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.songList && getActivity() != null) {
-            Intent intent = new Intent(getActivity(), SongListActivity.class);
+            Intent intent = new Intent(getActivity(), SongListMainActivity.class);
             mActivityHelper.startActivity(getActivity(), intent);
         }
     }

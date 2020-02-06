@@ -3,9 +3,11 @@
     <string name="app_singer">Singer</string>
     <string name="app_song_list">Song List</string>
     <string name="app_song_list_square">Song List Square</string>
+    <string name="app_song_list_category">Song List All</string>
 
 
     <string name="title_home">Home</string>
+    <string name="title_more">More</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 

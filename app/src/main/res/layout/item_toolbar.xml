@@ -8,4 +8,5 @@
     android:background="?attr/colorPrimary"
     app:contentInsetStartWithNavigation="0dp"
     app:titleTextAppearance="@style/Default.Toolbar.TitleText"
+    app:popupTheme="@style/popup_theme"
     app:navigationIcon="?attr/homeAsUpIndicator" />

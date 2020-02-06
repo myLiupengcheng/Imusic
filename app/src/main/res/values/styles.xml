@@ -24,6 +24,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!-- ToolBar菜单样式.-->
+    <style name="popup_theme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <!--设置不覆盖锚点-->
+        <item name="overlapAnchor">false</item>
+    </style>
+
 
     <!-- 设置Toolbar标题字体的大小 -->
     <style name="Default.Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">

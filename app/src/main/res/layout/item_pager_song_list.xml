@@ -19,7 +19,6 @@
         android:id="@+id/content_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/un_connection_tip"
         android:textColor="@android:color/black"
         android:padding="5dip"
         android:maxLines="2"
