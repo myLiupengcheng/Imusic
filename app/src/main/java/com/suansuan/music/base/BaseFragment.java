@@ -1,4 +1,4 @@
-package com.suansuan.music.Base;
+package com.suansuan.music.base;
 
 import android.app.Activity;
 import android.content.Context;

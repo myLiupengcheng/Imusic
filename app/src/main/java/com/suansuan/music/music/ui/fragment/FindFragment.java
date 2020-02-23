@@ -5,7 +5,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.suansuan.music.Base.BaseFragment;
+import com.suansuan.music.base.BaseFragment;
 import com.suansuan.music.activity.HomeActivity;
 
 /**

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
-import com.suansuan.music.Base.BaseFragment;
+import com.suansuan.music.base.BaseFragment;
 import com.suansuan.music.R;
 import com.suansuan.music.engine.NativeEngine;
 import com.suansuan.music.music.ui.view.IndexQueryView;

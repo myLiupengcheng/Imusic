@@ -7,8 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.suansuan.music.Base.BaseActivity;
-import com.suansuan.music.Base.BaseFragment;
+import com.suansuan.music.base.BaseActivity;
+import com.suansuan.music.base.BaseFragment;
 import com.suansuan.music.R;
 import com.suansuan.music.focator.FragmentFactory;
 import com.suansuan.music.music.ui.view.ViewPagerIndicate;

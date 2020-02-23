@@ -3,12 +3,12 @@ package com.suansuan.music.focator;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import com.suansuan.music.Base.BaseFragment;
+import com.suansuan.music.base.BaseFragment;
 import com.suansuan.music.music.ui.fragment.NativeMusicFragment.AlbumFragment;
 import com.suansuan.music.music.ui.fragment.NativeMusicFragment.FolderFragment;
 import com.suansuan.music.music.ui.fragment.NativeMusicFragment.MusicFragment;
 import com.suansuan.music.music.ui.fragment.NativeMusicFragment.SingerFragment;
-import com.suansuan.music.song.list.Fragment.SongListFragment;
+import com.suansuan.music.song.list.fragment.SongListFragment;
 import com.suansuan.music.song.list.presenter.SongListFragmentPresenter;
 
 import java.util.HashMap;

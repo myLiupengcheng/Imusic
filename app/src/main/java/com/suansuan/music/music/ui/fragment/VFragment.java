@@ -1,16 +1,5 @@
 package com.suansuan.music.music.ui.fragment;
 
-import android.support.v4.view.ViewPager;
-import android.view.View;
-
-import com.suansuan.music.Base.BaseFragment;
-import com.suansuan.music.R;
-import com.suansuan.music.activity.HomeActivity;
-import com.suansuan.music.music.ui.view.ViewPagerIndicate;
-
-import java.util.Arrays;
-import java.util.List;
-
 /**
  *
  * Created by suansuan on 2016/10/2.

@@ -1,4 +1,4 @@
-package com.suansuan.music.song.list.Fragment;
+package com.suansuan.music.song.list.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
