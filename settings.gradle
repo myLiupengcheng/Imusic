@@ -1,1 +1,1 @@
-include ':app', ':music-ui-core', ':music-network-core'
+include ':app', ':music-ui-core', ':music-network-core' 
