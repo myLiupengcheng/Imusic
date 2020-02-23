@@ -5,7 +5,6 @@ import android.app.Application;
 import com.suansuan.music.helper.ActivityHelper;
 
 public class MusicApplication extends Application {
-
     private static MusicApplication sInstance;
     private ActivityHelper mActivityHelper;
 
