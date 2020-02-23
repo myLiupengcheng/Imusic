@@ -18,3 +18,7 @@
 # build
 /build
 
+# maven
+maven-repository
+
+

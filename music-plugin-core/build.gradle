@@ -1,0 +1,34 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    //gradle sdk
+    compile gradleApi()
+    //groovy sdk
+    compile localGroovy()
+}
+
+
+repositories {
+    mavenCentral()
+}
+//以上都为固定写法
+
+//group和version
+group = 'com.suansuan.music.plugin'
+version = '1.0.0'
+
+//打包到本地或者远程Maven库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //提交到远程服务器：
+            // repository(url: "http://www.xxx.com/repos") {
+            //    authentication(userName: "admin", password: "admin")
+            // }
+            //先保持这样，后续将当前的这个插件上传到相应的服务器上面
+            //本地的Maven地址设置为/Users/pengchengliu/workSpace-pengcheng.liu/application-pengcheng.liu/IMusic/maven-repository
+            repository(url: uri('/Users/pengchengliu/workSpace-pengcheng.liu/application-pengcheng.liu/IMusic/maven-repository'))
+        }
+    }
+}
