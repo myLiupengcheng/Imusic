@@ -1,4 +1,4 @@
-package com.suansuanliu.music.uicore.dialog;
+package com.suansuan.music.uicore.dialog;
 
 import android.app.Dialog;
 import android.os.Bundle;

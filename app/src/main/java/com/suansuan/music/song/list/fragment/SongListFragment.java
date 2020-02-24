@@ -18,9 +18,10 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.suansuan.music.R;
 import com.suansuan.music.activity.presenter.FragmentPresenter;
 import com.suansuan.music.fragment.DelayLoadingFragment;
-import com.suansuan.music.song.list.GlideRoundTransform;
 import com.suansuan.music.song.list.bean.SongList;
 import com.suansuan.music.song.list.presenter.SongListFragmentPresenter;
+import com.suansuan.music.uicore.pic.DrawableManager;
+import com.suansuan.music.uicore.pic.PosterRoundTransform;
 
 import java.util.List;
 
@@ -30,10 +31,12 @@ public class SongListFragment extends DelayLoadingFragment
     private RecyclerView mRecyclerView;
     private ProgressBar mProgressBar;
     private List<SongList> mSongListCategoryGroupList;
+    private PosterRoundTransform mPosterRoundTransform;
 
     @Override
     public void onAttach(Context context) {
         setFragmentPresenter(new SongListFragmentPresenter(this));
+        mPosterRoundTransform = new PosterRoundTransform(context);
         super.onAttach(context);
     }
 
@@ -91,11 +94,12 @@ public class SongListFragment extends DelayLoadingFragment
             Context context = SongListFragment.this.getContext();
             viewHolder.contentTextTitle.setText(item.dissname);
 
-            Glide.with(SongListFragment.this)
-                    .load(item.imgurl)
-                    .placeholder(R.mipmap.default_image)
-                    .transform(new CenterCrop(context), new GlideRoundTransform(context,12))
-                    .into(viewHolder.contentImageView);
+//            Glide.with(SongListFragment.this)
+//                    .load(item.imgurl)
+//                    .placeholder(DrawableManager.newInstance(context).getPosterPlaceholderDrawable())
+//                    .transform(new CenterCrop(context), mPosterRoundTransform)
+//                    .into(viewHolder.contentImageView);
+            viewHolder.contentImageView.setImageDrawable(DrawableManager.newInstance(context).getPosterPlaceholderDrawable());
         }
 
 

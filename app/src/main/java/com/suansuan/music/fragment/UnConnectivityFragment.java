@@ -1,9 +1,7 @@
 package com.suansuan.music.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,10 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.suansuan.music.R;
-import com.suansuanliu.music.uicore.dialog.SwitchListDialog;
+import com.suansuan.music.uicore.dialog.SwitchListDialog;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class UnConnectivityFragment extends BaseFragment implements View.OnClickListener {
 

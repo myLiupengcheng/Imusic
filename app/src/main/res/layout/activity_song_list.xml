@@ -9,17 +9,12 @@
     <include
         layout="@layout/item_toolbar"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
         android:background="?attr/colorPrimary"
-        android:layout_width="0dip"
-        android:layout_weight="1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
         app:tabMode="scrollable"/>
 
 <!--        <ImageView-->
@@ -30,7 +25,6 @@
 <!--            android:background="?attr/colorPrimary"-->
 <!--            app:srcCompat="@drawable/ic_menu"/>-->
 
-    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/song_list_view_pager"
