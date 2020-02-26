@@ -3,11 +3,14 @@ package com.suansuan.music.uicore.widget;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
 import android.util.AttributeSet;
 import android.support.v7.widget.AppCompatImageView;
 
@@ -36,7 +39,7 @@ public class PosterView extends AppCompatImageView {
     private int mEndColor;
     private float radius;
 
-    private String listenerNumber = LISTENER_DEFAULT_NUMBER;
+    private String listenerNumber = formatListenerNumber(LISTENER_DEFAULT_NUMBER);
 
     public PosterView(Context context) {
         this(context, null);
@@ -87,16 +90,27 @@ public class PosterView extends AppCompatImageView {
     private void drawPosterListenerNumber(Canvas canvas) {
         if (mListenerIcon != null && mRectF != null) {
             canvas.save();
-            float dx = mRectF.left / 4;
-            float dy = mRectF.bottom - (mRectF.bottom / 4);
+            float dx = mRectF.right / 13;
+            float dy = mRectF.bottom - (mRectF.bottom / 7);
             canvas.translate(dx, dy);
             mListenerIcon.setBounds(0, 0, mListenerIcon.getIntrinsicWidth(), mListenerIcon.getIntrinsicHeight());
             mListenerIcon.draw(canvas);
+//            mPaint.setColor(Color.WHITE);
+//            mPaint.setShader(null);
+//            mPaint.setTextSize(18);
+//            StaticLayout staticLayout = new StaticLayout(listenerNumber, mPaint, 600,
+//                    Layout.Alignment.ALIGN_NORMAL, 1, 0, true);
+//            canvas.drawText(listenerNumber,dx + mListenerIcon.getIntrinsicWidth() + 10, dy, mPaint);
             canvas.restore();
         }
     }
 
     public void setListenerNumber (String number) {
-        this.listenerNumber = number;
+        this.listenerNumber = formatListenerNumber(number);
+    }
+
+    private static String formatListenerNumber (String listenerNumber) {
+        listenerNumber  = listenerNumber + "万";
+        return listenerNumber;
     }
 }

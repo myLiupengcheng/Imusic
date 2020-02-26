@@ -95,7 +95,7 @@ public class SongListFragment extends DelayLoadingFragment
             Context context = SongListFragment.this.getContext();
             viewHolder.contentTextTitle.setText(item.dissname.trim());
             Glide.with(SongListFragment.this)
-                    .load("")
+                    .load(item.imgurl)
                     .placeholder(DrawableManager.newInstance(context).getPosterPlaceholderDrawable())
                     .transform(new CenterCrop(context), mPosterRoundTransform)
                     .into(viewHolder.contentImageView);

@@ -12,12 +12,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.suansuan.music.R;
 import com.suansuan.music.activity.MusicActivity;
 import com.suansuan.music.focator.FragmentFactory;
 import com.suansuan.music.song.list.bean.SongListCategoryGroup;
 import com.suansuan.music.song.list.presenter.SongListActivityPresenter;
+import com.suansuan.music.uicore.pic.DrawableManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +45,10 @@ public class SongListMainActivity extends MusicActivity implements SongListActiv
         mTabLayout = findViewById(R.id.tab_layout);
         mViewPager = findViewById(R.id.song_list_view_pager);
         mTabLayout.setupWithViewPager(mViewPager);
+
+//        ImageView moreIcon = findViewById(R.id.tab_more);
+//        DrawableManager.newInstance(this).getPosterPlaceholderDrawable()
+//        moreIcon.
     }
 
     @Override

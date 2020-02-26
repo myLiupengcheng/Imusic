@@ -32,4 +32,12 @@ public class DrawableManager {
     public Drawable getPosterPlaceholderDrawable () {
         return mContext.getResources().getDrawable(R.drawable.placeholder_background);
     }
+
+//    /**
+//     * 获取没有加载完成的 Drawable 的占位图片
+//     * @return 没有加载完成的占位图片
+//     */
+//    public Drawable getPosterPlaceholderDrawable () {
+//        return mContext.getResources().getDrawable(R.drawable.placeholder_background);
+//    }
 }
