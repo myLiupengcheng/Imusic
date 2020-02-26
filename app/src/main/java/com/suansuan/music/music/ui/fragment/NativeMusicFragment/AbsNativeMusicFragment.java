@@ -10,8 +10,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.nineoldandroids.view.ViewHelper;
-import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.suansuan.music.base.BaseFragment;
 import com.suansuan.music.R;
 import com.suansuan.music.engine.NativeEngine;
@@ -58,8 +56,6 @@ public abstract class AbsNativeMusicFragment extends BaseFragment {
         mQuickIndexBar = (IndexQueryView) mViewRoot.findViewById(R.id.quickIndexBar);
         mQuickIndexBar.setVisibility(View.GONE);
         mCurrentWord = (TextView) mViewRoot.findViewById(R.id.currentWord);
-        ViewHelper.setScaleX(mCurrentWord, 0);
-        ViewHelper.setScaleY(mCurrentWord, 0);
         initNativeMusicView();
         return mViewRoot;
     }
@@ -101,15 +97,11 @@ public abstract class AbsNativeMusicFragment extends BaseFragment {
         mCurrentWord.setText(letter);
         if(!isScale){
             isScale = true;
-            ViewPropertyAnimator.animate(mCurrentWord).scaleX(1f).setInterpolator(new OvershootInterpolator()).setDuration(450).start();
-            ViewPropertyAnimator.animate(mCurrentWord).scaleY(1f).setInterpolator(new OvershootInterpolator()).setDuration(450).start();
         }
         //延时隐藏currentWord
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ViewPropertyAnimator.animate(mCurrentWord).scaleX(0f).setDuration(450).start();
-                ViewPropertyAnimator.animate(mCurrentWord).scaleY(0f).setDuration(450).start();
                 isScale = false;
             }
         }, 1500);

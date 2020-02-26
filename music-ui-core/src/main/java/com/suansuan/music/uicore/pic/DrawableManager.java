@@ -3,7 +3,6 @@ package com.suansuan.music.uicore.pic;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
-import com.suansuan.music.uicore.pic.drawable.PosterPlaceholderDrawable;
 import com.suansuanliu.music.uicore.R;
 
 public class DrawableManager {
@@ -26,9 +25,11 @@ public class DrawableManager {
         return sDrawableManager;
     }
 
+    /**
+     * 获取没有加载完成的 Drawable 的占位图片
+     * @return 没有加载完成的占位图片
+     */
     public Drawable getPosterPlaceholderDrawable () {
-
-        PosterPlaceholderDrawable posterPlaceholderDrawable = new PosterPlaceholderDrawable(mContext);
-        return posterPlaceholderDrawable;
+        return mContext.getResources().getDrawable(R.drawable.placeholder_background);
     }
 }

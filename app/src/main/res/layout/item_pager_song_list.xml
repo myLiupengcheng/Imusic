@@ -3,11 +3,10 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
     android:layout_margin="5dp"
     android:orientation="vertical">
 
-    <ImageView
+    <com.suansuan.music.uicore.widget.PosterView
         android:id="@+id/content_image"
         android:layout_width="170dip"
         android:layout_height="170dip"
@@ -23,8 +22,8 @@
         android:textColor="@android:color/black"
         android:padding="5dip"
         android:maxLines="2"
+        android:layout_margin="5dip"
         android:ellipsize="end"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/content_image" />
 

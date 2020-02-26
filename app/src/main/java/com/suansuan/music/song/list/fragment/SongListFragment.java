@@ -1,6 +1,7 @@
 package com.suansuan.music.song.list.fragment;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -92,14 +93,12 @@ public class SongListFragment extends DelayLoadingFragment
         public void onBindViewHolder(ViewHolder viewHolder, int position) {
             SongList item = getItem(position);
             Context context = SongListFragment.this.getContext();
-            viewHolder.contentTextTitle.setText(item.dissname);
-
-//            Glide.with(SongListFragment.this)
-//                    .load(item.imgurl)
-//                    .placeholder(DrawableManager.newInstance(context).getPosterPlaceholderDrawable())
-//                    .transform(new CenterCrop(context), mPosterRoundTransform)
-//                    .into(viewHolder.contentImageView);
-            viewHolder.contentImageView.setImageDrawable(DrawableManager.newInstance(context).getPosterPlaceholderDrawable());
+            viewHolder.contentTextTitle.setText(item.dissname.trim());
+            Glide.with(SongListFragment.this)
+                    .load("")
+                    .placeholder(DrawableManager.newInstance(context).getPosterPlaceholderDrawable())
+                    .transform(new CenterCrop(context), mPosterRoundTransform)
+                    .into(viewHolder.contentImageView);
         }
 
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="posterPlaceholderColor">#EEEEEE</color>
+
+    <color name="posterViewStartColor">#00EEEEEE</color>
+    <color name="posterViewEndColor">#55333333</color>
+</resources>
