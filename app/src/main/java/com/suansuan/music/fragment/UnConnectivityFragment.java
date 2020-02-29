@@ -1,6 +1,7 @@
 package com.suansuan.music.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import com.suansuan.music.uicore.dialog.SwitchListDialog;
 import java.util.ArrayList;
 
 public class UnConnectivityFragment extends BaseFragment implements View.OnClickListener {
+    private static final String WIFI_SETTINGS_ACTION = "android.settings.WIFI_SETTINGS";
 
     @Override
     public void onAttach(Context context) {
@@ -59,7 +61,7 @@ public class UnConnectivityFragment extends BaseFragment implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        SwitchListDialog switchListDialog = new SwitchListDialog();
+        /*SwitchListDialog switchListDialog = new SwitchListDialog();
         Bundle bundle = new Bundle();
         ArrayList<SwitchListDialog.DisplayBean> displayBeans = new ArrayList<>();
         SwitchListDialog.DisplayBean data = new SwitchListDialog.DisplayBean("移动数据", false);
@@ -68,6 +70,8 @@ public class UnConnectivityFragment extends BaseFragment implements View.OnClick
         displayBeans.add(wifi);
         bundle.putParcelableArrayList(SwitchListDialog.KEY_DATA_LIST, displayBeans);
         switchListDialog.setArguments(bundle);
-        switchListDialog.show(getFragmentManager(), "sss");
+        switchListDialog.show(getFragmentManager(), "sss");*/
+        Intent wifiSettingsIntent = new Intent(WIFI_SETTINGS_ACTION);
+        startActivity(wifiSettingsIntent);
     }
 }

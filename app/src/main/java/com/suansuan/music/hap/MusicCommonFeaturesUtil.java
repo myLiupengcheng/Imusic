@@ -1,7 +1,9 @@
 package com.suansuan.music.hap;
 
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -164,6 +166,29 @@ public class MusicCommonFeaturesUtil {
         } catch (Throwable ex) {
             MusicLog.w(TAG, "getNetworInfo, ConnectivityManager.getActiveNetworkInfo excption");
             return null;
+        }
+    }
+
+    public static class NetWorkBroadcastReceiver extends BroadcastReceiver {
+
+        private NetWorkContectedListener mNetWorkContectedListener;
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            NetworkInfo networkInfo = getNetworInfo(context);
+            if (networkInfo != null && networkInfo.isConnected()) {
+                mNetWorkContectedListener.setNetWorkContent(true);
+            } else {
+                mNetWorkContectedListener.setNetWorkContent(false);
+            }
+        }
+
+        public void setNetWorkContectedListener(NetWorkContectedListener listener) {
+            mNetWorkContectedListener = listener;
+        }
+
+        public interface NetWorkContectedListener {
+            void setNetWorkContent(boolean isConnected);
         }
     }
 
